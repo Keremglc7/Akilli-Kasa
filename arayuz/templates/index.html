@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akıllı Kasa Sistemi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/kasa.css') }}">
+</head>
+<body>
+    <div class="app">
+        <!-- ═══ HEADER ═══════════════════════════════════════════ -->
+        <header class="header">
+            <div class="header-left">
+                <div class="header-logo">🛒</div>
+                <div class="header-title"><span>AKILLI</span> KASA SİSTEMİ</div>
+            </div>
+            <div class="header-right">
+                <div class="live-badge">
+                    <div class="live-dot"></div>
+                    Canlı
+                </div>
+                <div class="clock" id="clock">00:00:00</div>
+            </div>
+        </header>
+
+        <!-- ═══ MAIN ═════════════════════════════════════════════ -->
+        <div class="main">
+            <!-- ── SOL: VIDEO FEED ───────────────────────────── -->
+            <div class="video-panel">
+                <div class="video-container">
+                    <img src="/video_feed" alt="Kamera Akışı" />
+                    <div class="scan-line"></div>
+                    <div class="video-overlay">
+                        <div class="video-tag green">● REC</div>
+                        <div class="video-tag" id="item-count-tag">0 ürün</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── SAG: DİJİTAL FİŞ ─────────────────────────── -->
+            <div class="receipt-panel">
+                <div class="receipt-card">
+                    <!-- Fis Basligi -->
+                    <div class="receipt-header">
+                        <div class="receipt-title">📋 Dijital Kasa Fişi</div>
+                        <div class="receipt-subtitle">Ürünler otomatik algılanır</div>
+                    </div>
+
+                    <!-- Tablo Basligi -->
+                    <div class="receipt-table-header">
+                        <span>Ürün</span>
+                        <span>Tutar</span>
+                    </div>
+
+                    <!-- Urun Listesi (JS ile doldurulur) -->
+                    <div class="receipt-items" id="receipt-items">
+                        <div class="empty-state" id="empty-state">
+                            <div class="empty-icon">📷</div>
+                            <div class="empty-text">
+                                Ürünleri kameraya gösterin<br>
+                                otomatik algılanacaktır
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Toplam -->
+                    <div class="receipt-footer">
+                        <div class="receipt-summary-row">
+                            <span class="summary-label">Tespit Edilen</span>
+                            <span class="summary-value" id="total-count">0 ürün</span>
+                        </div>
+                        <div class="receipt-total-row">
+                            <span class="total-label">TOPLAM</span>
+                            <span class="total-value" id="total-value">
+                                0.00<span class="total-currency"> TL</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         JAVASCRIPT
+         ═══════════════════════════════════════════════════════════ -->
+    <!-- Sunucudan gelen yapilandirma; kasa.js bu degerleri okur. -->
+    <script>
+        const KASA_AYAR = { sepetSorguMs: {{ sepet_sorgu_ms }} };
+    </script>
+    <script src="{{ url_for('static', filename='js/kasa.js') }}"></script>
+</body>
+</html>
