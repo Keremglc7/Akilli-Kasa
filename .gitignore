@@ -1,0 +1,47 @@
+# ── Ortam degiskenleri / gizli bilgiler ──────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Python ──────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Veri seti ───────────────────────────────────────────────────────
+# Ham videolar (~222 MB) repoya alinmaz; harici depolamada tutulur.
+veri_seti/
+
+# Videolardan uretilen kareler (~133 MB) - kare_cikar.py yeniden uretir.
+kareler/
+
+# NOT: cekirdek_veri/ bilerek takip ediliyor; kucuk bir ornek etiketleme
+# seti olarak repoda kalir.
+
+# ── Model agirliklari ───────────────────────────────────────────────
+modeller/*.pt
+modeller/*.pth
+modeller/*.onnx
+modeller/*.weights
+modeller/*.h5
+
+# ── Editor / IDE ────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Isletim sistemi ─────────────────────────────────────────────────
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
