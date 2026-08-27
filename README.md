@@ -252,27 +252,26 @@ confused with each other.
 
 ---
 
-## Ekran Görüntüleri / Screenshots
+<!--
+  EKRAN GORUNTUSU BOLUMU - HAZIR, SADECE KAPALI.
 
-> Screenshots and the demo video are not added yet. Place the files under `docs/` and the
-> links below will resolve.
+  Acmak icin:
+    1. python baslat.py  ile uygulamayi calistir, ekran goruntusunu al
+    2. Proje kokunde docs/ klasoru olustur, gorselleri icine koy
+    3. Bu yorum blogunun ilk satirini ve son satirini sil
+
+## Ekran Görüntüleri / Screenshots
 
 **Live checkout interface**
 
-<!-- Buraya ekleyin: docs/ekran-goruntusu-arayuz.png -->
 ![Checkout interface](docs/ekran-goruntusu-arayuz.png)
 
 **Detection in progress**
 
-<!-- Buraya ekleyin: docs/ekran-goruntusu-tespit.png -->
 ![Product detection](docs/ekran-goruntusu-tespit.png)
 
-**Demo video**
-
-<!-- Buraya ekleyin: docs/demo.gif veya bir YouTube linki -->
-![Demo](docs/demo.gif)
-
 ---
+-->
 
 ## Klasör Yapısı / Project Structure
 
